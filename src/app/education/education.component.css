@@ -1,13 +1,18 @@
 .row-align {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
-    grid-column-gap: 10px; /* Adjust spacing between left and right elements */
+    grid-template-columns: 1fr 1fr; 
+    grid-column-gap: 10px; 
 }
 
 .row-align .left {
-    grid-column: 1; /* Left element occupies first column */
+    grid-column: 1; 
 }
 
 .row-align .right {
-    grid-column: 2; /* Right element occupies second column */
+    grid-column: 2; 
 }
+.error-message {
+    color: red;
+    font-size: 12px;
+  }
+  

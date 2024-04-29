@@ -1,31 +1,46 @@
-<form>
+<form [formGroup]="educationalForm" (ngSubmit)="onSubmit()">
     <h2>EDUCATIONAL DETAILS</h2>
     <div class="row-align">
-        <div class="left">
-            <label>Course Pursued</label><br>
-            <select>
-                <option>BE</option>
-                <option>BCA</option>
-                <option>BSc</option>
-
-            </select>
+      <div class="left">
+        <label>Course Pursued</label><br>
+        <select formControlName="course">
+          <option value="">Select Course</option>
+          <option value="BE">BE</option>
+          <option value="BCA">BCA</option>
+          <option value="BSc">BSc</option>
+        </select>
+        <div *ngIf="educationalForm.get('course')?.invalid && educationalForm.get('course')?.touched" class="error-message">
+          Course is required
         </div>
-        <div class="right">
-            <label>Name of the College/Institution</label><br>
-            <input type="text" placeholder="Name of the College/Institution">
+      </div>
+      <div class="right">
+        <label>Name of the College/Institution</label><br>
+        <input type="text" formControlName="collegeName" placeholder="Name of the College/Institution">
+        <div *ngIf="educationalForm.get('collegeName')?.invalid && educationalForm.get('collegeName')?.touched" class="error-message">
+          College name is required
         </div>
+      </div>
     </div>
     <div class="row-align">
-        <div class="left">
-            <label>Duration</label><br>
-            From:<input type="date">
-            To:<input type="date">
-
+      <div class="left">
+        <label>Duration</label><br>
+        From:<input type="date" formControlName="fromDate">
+        To:<input type="date" formControlName="toDate">
+        <div *ngIf="educationalForm.get('fromDate')?.invalid && educationalForm.get('fromDate')?.touched" class="error-message">
+          From date is required
         </div>
-        <div class="right">
-            <label>CGPA obtained</label><br>
-            <input type="text" placeholder="CGPA Obtained">
+        <div *ngIf="educationalForm.get('toDate')?.invalid && educationalForm.get('toDate')?.touched" class="error-message">
+          To date is required
         </div>
+      </div>
+      <div class="right">
+        <label>CGPA obtained</label><br>
+        <input type="text" formControlName="cgpa" placeholder="CGPA Obtained">
+        <div *ngIf="educationalForm.get('cgpa')?.invalid && educationalForm.get('cgpa')?.touched" class="error-message">
+          Please enter a valid CGPA (e.g., 8.5)
+        </div>
+      </div>
     </div>
-    
-</form>
+    <button type="submit">Submit</button>
+  </form>
+  
