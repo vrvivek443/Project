@@ -1,0 +1,38 @@
+<h2>SKILL SET</h2>
+<button (click)="addSkill()">Add new</button>
+<div *ngIf="isTrue">
+    <div class="row-align">
+        <div>
+            <label>Skill</label>
+            <input type="text" [(ngModel)]="skill">
+        </div>
+        <div>
+            <label>Experience</label>
+            <input type="number" [(ngModel)]="experience">
+        </div>
+        <div>
+            <button (click)="addData()">Add</button>
+        </div>
+    </div>
+</div>
+<table>
+    <tr>
+        <th>Skills</th>
+        <th>YearsOfExperience</th>
+        <th>Rating</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let skill of skills">
+        <td>{{skill}}</td>
+        <td></td>
+        <td>
+            <select>
+                <option *ngFor="let data of rating" value="data">{{data}}</option>
+            </select>
+        </td>
+        <td>
+            <button>Edit</button>
+            <button>Delete</button>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,13 @@
+.row-align {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+    grid-column-gap: 10px; /* Adjust spacing between left and right elements */
+}
+
+.row-align .left {
+    grid-column: 1; /* Left element occupies first column */
+}
+
+.row-align .right {
+    grid-column: 2; /* Right element occupies second column */
+}
