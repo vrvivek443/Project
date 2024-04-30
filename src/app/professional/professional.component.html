@@ -1,21 +1,37 @@
-<div class="row-align">
-    <div class="left">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row-align">
+      <div class="left">
         <label>Duration</label><br>
-        <input type="date" placeholder="From">
-        <input type="date" placeholder="To">
-    </div>
-    <div class="right">
+        <input type="date" formControlName="duration.from">
+        <input type="date" formControlName="duration.to">
+        <div *ngIf="form.get('duration')?.invalid && form.get('duration')?.touched">
+          <small class="text-danger">Both 'From' and 'To' dates are required.</small>
+        </div>
+      </div>
+      <div class="right">
         <label>Role/Title</label><br>
-        <input type="text" placeholder="Designation">
+        <input type="text" formControlName="roleTitle">
+        <div *ngIf="form.get('roleTitle')?.invalid && form.get('roleTitle')?.touched">
+          <small class="text-danger">Role/Title is required.</small>
+        </div>
+      </div>
     </div>
-</div>
-<div class="row-align">
-    <div class="left">
+    <div class="row-align">
+      <div class="left">
         <label>Reason for change</label><br>
-        <input type="text" placeholder="Reason for change">
-    </div>
-    <div class="right">
+        <input type="text" formControlName="reasonForChange">
+        <div *ngIf="form.get('reasonForChange')?.invalid && form.get('reasonForChange')?.touched">
+          <small class="text-danger">Reason for change is required.</small>
+        </div>
+      </div>
+      <div class="right">
         <label>Total years of experience</label><br>
-        <input type="text" placeholder="Total years of experience">
+        <input type="text" formControlName="totalExperience">
+        <div *ngIf="form.get('totalExperience')?.invalid && form.get('totalExperience')?.touched">
+          <small class="text-danger">Total years of experience is required.</small>
+        </div>
+      </div>
     </div>
-</div>
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+  

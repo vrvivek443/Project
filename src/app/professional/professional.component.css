@@ -11,3 +11,6 @@
 .row-align .right {
     grid-column: 2; /* Right element occupies second column */
 }
+.text-danger{
+    color:red
+}

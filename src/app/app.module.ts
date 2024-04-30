@@ -8,12 +8,6 @@ import { GeneralComponent } from './general/general.component';
 import { ProfessionalComponent } from './professional/professional.component';
 import { SkillsetComponent } from './skillset/skillset.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -31,12 +25,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatCheckboxModule,
-    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
