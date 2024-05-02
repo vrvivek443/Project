@@ -5,7 +5,7 @@
     <div class="row-align">
         <div class="left">
             <label>First Name:</label><br>
-            <input type="text" formControlName="firstName" placeholder="Enter the First Name">
+            <input type="text" formControlName="firstName" placeholder="Enter the First Name" class="example-full-width">
             <div *ngIf="basicInfoForm.get('firstName')?.invalid && basicInfoForm.get('firstName')?.touched">
                 <small class="text-danger">First Name is required.</small>
             </div>
