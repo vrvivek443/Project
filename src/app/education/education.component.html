@@ -1,9 +1,13 @@
-<form [formGroup]="educationalForm" (ngSubmit)="onSubmit()">
-    <h2>EDUCATIONAL DETAILS</h2>
+<div class="background-color">
+  <form [formGroup]="educationalForm" (ngSubmit)="onSubmit()">
+    <div class="icon">
+      <i class="fas fa-graduation-cap mt-1 p-2"></i>
+      <h2>EDUCATIONAL DETAILS</h2>
+    </div>
     <div class="row-align">
       <div class="left">
         <label>Course Pursued</label><br>
-        <select formControlName="course">
+        <select formControlName="course" class="form-control custom-input">
           <option value="">Select Course</option>
           <option value="BE">BE</option>
           <option value="BCA">BCA</option>
@@ -15,7 +19,7 @@
       </div>
       <div class="right">
         <label>Name of the College/Institution</label><br>
-        <input type="text" formControlName="collegeName" placeholder="Name of the College/Institution">
+        <input type="text" formControlName="collegeName" placeholder="Name of the College/Institution" class="form-control custom-input">
         <div *ngIf="educationalForm.get('collegeName')?.invalid && educationalForm.get('collegeName')?.touched" class="error-message">
           College name is required
         </div>
@@ -24,8 +28,8 @@
     <div class="row-align">
       <div class="left">
         <label>Duration</label><br>
-        From:<input type="date" formControlName="fromDate">
-        To:<input type="date" formControlName="toDate">
+        From:<input type="date" formControlName="fromDate" class="form-control custom-input">
+        To:<input type="date" formControlName="toDate" class="form-control custom-input">
         <div *ngIf="educationalForm.get('fromDate')?.invalid && educationalForm.get('fromDate')?.touched" class="error-message">
           From date is required
         </div>
@@ -35,12 +39,13 @@
       </div>
       <div class="right">
         <label>CGPA obtained</label><br>
-        <input type="text" formControlName="cgpa" placeholder="CGPA Obtained">
+        <input type="text" formControlName="cgpa" placeholder="CGPA Obtained" class="form-control custom-input">
         <div *ngIf="educationalForm.get('cgpa')?.invalid && educationalForm.get('cgpa')?.touched" class="error-message">
           Please enter a valid CGPA (e.g., 8.5)
         </div>
       </div>
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit" class="btn">Submit</button>
   </form>
   
+</div>

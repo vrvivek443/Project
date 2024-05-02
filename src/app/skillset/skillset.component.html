@@ -1,26 +1,29 @@
 <div class="background-color">
-    <h2>SKILL SET</h2>
-    <button (click)="addSkill()">Add new</button>
+    <div class="icon">
+        <i class="fas fa-book-reader mt-1 p-2"></i>
+        <h2>SKILL SET</h2>
+    </div>
+    <button class="btn" (click)="addSkill()">Add new</button>
     <div *ngIf="isTrue">
       <div class="row-align">
         <form [formGroup]="skillForm">
         <div>
           <label>Skill</label>
-          <input type="text" formControlName="skill" [(ngModel)]="skill">
+          <input type="text" formControlName="skill" [(ngModel)]="skill" placeholder="Enter your skill" class="form-control custom-input">
           <div *ngIf="skillForm.get('skill')?.invalid && skillForm.get('skill')?.touched">
             <small class="text-danger">Skill is required.</small>
           </div>
         </div>
         <div>
           <label>Experience</label>
-          <input type="number" formControlName="experience" [(ngModel)]="experience">
+          <input type="number" formControlName="experience" [(ngModel)]="experience" placeholder="Enter your experience" class="form-control custom-input">
           <div *ngIf="skillForm.get('experience')?.invalid && skillForm.get('experience')?.touched">
             <small class="text-danger">Experience is required.</small>
           </div>
         </div>
     </form>
         <div>
-          <button (click)="addData()">Add</button>
+          <button class="btn" (click)="addData()">Add</button>
         </div>
       </div>
     </div>
@@ -33,21 +36,21 @@
       </tr>
       <tr *ngFor="let skill of skills; let i = index">
         <td *ngIf="!editMode || editIndex !== i">{{ skill.skill }}</td>
-        <td><input type="text" [(ngModel)]="editSkillData.skill" *ngIf="editMode && editIndex === i">
+        <td><input type="text" [(ngModel)]="editSkillData.skill" *ngIf="editMode && editIndex === i" class="form-control custom-input">
     </td>
         <td *ngIf="!editMode || editIndex !== i">{{ skill.experience }}</td>
         <td>
-            <input type="number" [(ngModel)]="editSkillData.experience" *ngIf="editMode && editIndex === i">
+            <input type="number" [(ngModel)]="editSkillData.experience" *ngIf="editMode && editIndex === i" class="form-control custom-input">
           </td>
         <td>
-          <select [(ngModel)]="editSkillData.rating">
+          <select [(ngModel)]="editSkillData.rating" class="form-control custom-input">
                 <option *ngFor="let data of rating" [value]="data">{{ data }}</option>
           </select>
         </td>
         <td>
-            <button (click)="editSkill(i)" *ngIf="!editMode || editIndex !== i">Edit</button>
-            <button (click)="saveSkill(i)" *ngIf="editMode && editIndex === i">Save</button>
-            <button (click)="deleteSkill(i)">Delete</button>
+            <button (click)="editSkill(i)" *ngIf="!editMode || editIndex !== i" class="btn">Edit</button>
+            <button (click)="saveSkill(i)" *ngIf="editMode && editIndex === i" class="btn">Save</button>
+            <button (click)="deleteSkill(i)" class="btn">Delete</button>
         </td>
       </tr>
     </table>

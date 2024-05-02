@@ -1,37 +1,43 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="row-align">
-      <div class="left">
-        <label>Duration</label><br>
-        <input type="date" formControlName="duration.from">
-        <input type="date" formControlName="duration.to">
-        <div *ngIf="form.get('duration')?.invalid && form.get('duration')?.touched">
-          <small class="text-danger">Both 'From' and 'To' dates are required.</small>
+<div class="background-color">
+        <div class="icon">
+            <i class="fas fa-user-group mt-1 p-2"></i>
+            <h2>PROFESSIONAL DETAILS</h2>
         </div>
-      </div>
-      <div class="right">
-        <label>Role/Title</label><br>
-        <input type="text" formControlName="roleTitle">
-        <div *ngIf="form.get('roleTitle')?.invalid && form.get('roleTitle')?.touched">
-          <small class="text-danger">Role/Title is required.</small>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row-align">
+          <div class="left">
+            <label>Duration</label><br>
+            <input type="date" formControlName="duration.from" class="form-control custom-input">
+            <input type="date" formControlName="duration.to" class="form-control custom-input">
+            <div *ngIf="form.get('duration')?.invalid && form.get('duration')?.touched">
+              <small class="text-danger">Both 'From' and 'To' dates are required.</small>
+            </div>
+          </div>
+          <div class="right">
+            <label>Role/Title</label><br>
+            <input type="text" formControlName="roleTitle" placeholder="Enter Role/Title" class="form-control custom-input" >
+            <div *ngIf="form.get('roleTitle')?.invalid && form.get('roleTitle')?.touched">
+              <small class="text-danger">Role/Title is required.</small>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row-align">
-      <div class="left">
-        <label>Reason for change</label><br>
-        <input type="text" formControlName="reasonForChange">
-        <div *ngIf="form.get('reasonForChange')?.invalid && form.get('reasonForChange')?.touched">
-          <small class="text-danger">Reason for change is required.</small>
+        <div class="row-align">
+          <div class="left">
+            <label>Reason for change</label><br>
+            <input type="text" formControlName="reasonForChange" placeholder="Enter the reason for change" class="form-control custom-input">
+            <div *ngIf="form.get('reasonForChange')?.invalid && form.get('reasonForChange')?.touched">
+              <small class="text-danger">Reason for change is required.</small>
+            </div>
+          </div>
+          <div class="right">
+            <label>Total years of experience</label><br>
+            <input type="text" formControlName="totalExperience" placeholder="Enter your experience" class="form-control custom-input">
+            <div *ngIf="form.get('totalExperience')?.invalid && form.get('totalExperience')?.touched">
+              <small class="text-danger">Total years of experience is required.</small>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="right">
-        <label>Total years of experience</label><br>
-        <input type="text" formControlName="totalExperience">
-        <div *ngIf="form.get('totalExperience')?.invalid && form.get('totalExperience')?.touched">
-          <small class="text-danger">Total years of experience is required.</small>
-        </div>
-      </div>
-    </div>
-    <button type="submit" [disabled]="form.invalid">Submit</button>
-  </form>
+        <button type="submit" [disabled]="form.invalid" class="btn">Submit</button>
+      </form>
+</div>
   

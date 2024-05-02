@@ -1,18 +1,20 @@
 <div class="background-color">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <h2>BASIC INFORMATION</h2>
+    <div class="icon">
+        <i class="fas fa-user mt-1 p-2"></i>
+        <h2>BASIC INFORMATION</h2>
+    </div>
 <form [formGroup]="basicInfoForm" (ngSubmit)="onSubmit()">
     <div class="row-align">
         <div class="left">
             <label>First Name:</label><br>
-            <input type="text" formControlName="firstName" placeholder="Enter the First Name" class="example-full-width">
+            <input type="text" formControlName="firstName" placeholder="Enter the First Name" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('firstName')?.invalid && basicInfoForm.get('firstName')?.touched">
                 <small class="text-danger">First Name is required.</small>
             </div>
         </div>
         <div class="right">
             <label>Last Name:</label><br>
-            <input type="text" formControlName="lastName" placeholder="Enter the Last Name">
+            <input type="text" formControlName="lastName" placeholder="Enter the Last Name" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('lastName')?.invalid && basicInfoForm.get('lastName')?.touched">
                 <small class="text-danger">Last Name is required.</small>
             </div>
@@ -21,16 +23,16 @@
     <div class="row-align">
         <div class="left">
             <label>Date of Birth</label><br>
-            <input type="date" formControlName="dob" placeholder="Enter the Date of Birth">
+            <input type="date" formControlName="dob" placeholder="Enter the Date of Birth" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('dob')?.invalid && basicInfoForm.get('dob')?.touched">
                 <small class="text-danger">Date of Birth is required.</small>
             </div>
         </div>
         <div class="right">
             <label>Gender:</label><br>
-            <input type="radio" formControlName="gender" value="Male"> <label>Male</label>
-            <input type="radio" formControlName="gender" value="Female"> <label>Female</label>
-            <input type="radio" formControlName="gender" value="Others"> <label>Others</label>
+            <input type="radio" formControlName="gender" value="Male" class="form-check-input"> <label>Male</label>
+            <input type="radio" formControlName="gender" value="Female" class="form-check-input"> <label>Female</label>
+            <input type="radio" formControlName="gender" value="Others" class="form-check-input"> <label>Others</label>
             <div *ngIf="basicInfoForm.get('gender')?.invalid && basicInfoForm.get('gender')?.touched">
                 <small class="text-danger">Gender is required.</small>
             </div>
@@ -39,7 +41,7 @@
     <div class="row-align">
         <div class="left">
             <label>Position applied for</label><br>
-            <select formControlName="position">
+            <select formControlName="position" class="form-control custom-input">
                 <option value="">Select Position</option>
                 <option value="Full stack developer">Full stack developer</option>
                 <option value="Front-end developer">Front-end developer</option>
@@ -51,58 +53,63 @@
         </div>
         <div class="right">
             <label>Employee Reference</label><br>
-            <input type="text" formControlName="employeeReference" placeholder="Employee Reference">
+            <input type="text" formControlName="employeeReference" placeholder="Employee Reference" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('employeeReference')?.invalid && basicInfoForm.get('employeeReference')?.touched">
                 <small class="text-danger">Employee Reference is required.</small>
             </div>
         </div>
     </div>
-    <!-- CONTACT section -->
-    <h2>CONTACT</h2>
+    <div class="icon">
+        <i class="fas fa-mobile-screen-button mt-1 p-2"></i>
+        <h2>CONTACT</h2>
+    </div>
     <div class="row-align">
         <div class="left">
             <label>Mobile Number</label><br>
-            <input type="tel" formControlName="mobileNumber" placeholder="Enter the Mobile Number">
+            <input type="tel" formControlName="mobileNumber" placeholder="Enter the Mobile Number" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('mobileNumber')?.invalid && basicInfoForm.get('mobileNumber')?.touched">
                 <small class="text-danger">Mobile Number is required.</small>
             </div>
         </div>
-        <div class="">
+        <div class="right">
             <label>Home Phone Number</label><br>
-            <input type="tel" formControlName="homePhoneNumber" placeholder="Enter the Home Phone Number">
+            <input type="tel" formControlName="homePhoneNumber" placeholder="Enter the Home Phone Number" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('homePhoneNumber')?.invalid && basicInfoForm.get('homePhoneNumber')?.touched">
                 <small class="text-danger">Home Phone Number is required.</small>
             </div>
         </div>
-        <div class="">
+        <div class="left mt-3" >
             <label>Office Number</label><br>
-            <input type="tel" formControlName="officeNumber" placeholder="Enter the Office Number">
+            <input type="tel" formControlName="officeNumber" placeholder="Enter the Office Number" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('officeNumber')?.invalid && basicInfoForm.get('officeNumber')?.touched">
                 <small class="text-danger">Office Number is required.</small>
             </div>
         </div>
     </div>
     <div>
-        <div class="">
+        <div class="row-align">
             <label>Personal Email Id</label><br>
-            <input type="email" formControlName="personalEmail" placeholder="Enter the Email Id">
+            <input type="email" formControlName="personalEmail" placeholder="Enter the Email Id" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('personalEmail')?.invalid && basicInfoForm.get('personalEmail')?.touched">
                 <small class="text-danger">Personal Email Id is required.</small>
             </div>
         </div>
     </div>
-    <h2>ADDRESS</h2>
+    <div class="icon">
+        <i class="fas fa-house mt-1 p-2"></i>
+        <h2>ADDRESS</h2>
+    </div>
     <div class="row-align">
         <div class="left">
             <label>Present Address</label><br>
-            <input type="text" formControlName="presentAddress" placeholder="Enter the Present Address">
+            <input type="text" formControlName="presentAddress" placeholder="Enter the Present Address" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('presentAddress')?.invalid && basicInfoForm.get('presentAddress')?.touched">
                 <small class="text-danger">Present Address is required.</small>
             </div>
         </div>
         <div class="right">
             <label>Locality</label><br>
-            <input type="text" formControlName="locality" placeholder="Enter the Locality">
+            <input type="text" formControlName="locality" placeholder="Enter the Locality" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('locality')?.invalid && basicInfoForm.get('locality')?.touched">
                 <small class="text-danger">Locality is required.</small>
             </div>
@@ -111,14 +118,14 @@
     <div class="row-align">
         <div class="left">
             <label>City</label><br>
-            <input type="text" formControlName="city" placeholder="Enter the City">
+            <input type="text" formControlName="city" placeholder="Enter the City" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('city')?.invalid && basicInfoForm.get('city')?.touched">
                 <small class="text-danger">City is required.</small>
             </div>
         </div>
         <div class="right">
             <label>PinCode</label><br>
-            <input type="text" formControlName="pinCode" placeholder="Enter the PinCode">
+            <input type="number" formControlName="pinCode" placeholder="Enter the PinCode" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('pinCode')?.invalid && basicInfoForm.get('pinCode')?.touched">
                 <small class="text-danger">PinCode is required.</small>
             </div>
@@ -127,14 +134,14 @@
     <div class="row-align">
         <div class="left">
             <label>District</label><br>
-            <input type="text" formControlName="district" placeholder="Enter the District">
+            <input type="text" formControlName="district" placeholder="Enter the District" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('district')?.invalid && basicInfoForm.get('district')?.touched">
                 <small class="text-danger">District is required.</small>
             </div>
         </div>
         <div class="right">
             <label>State</label><br>
-            <input type="text" formControlName="state" placeholder="Enter the state">
+            <input type="text" formControlName="state" placeholder="Enter the state" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('state')?.invalid && basicInfoForm.get('state')?.touched">
                 <small class="text-danger">State is required.</small>
             </div>
@@ -143,14 +150,14 @@
     <div class="row-align">
         <div class="left">
             <label>Country</label><br>
-            <input type="text" formControlName="country" placeholder="Enter the Country">
+            <input type="text" formControlName="country" placeholder="Enter the Country" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('country')?.invalid && basicInfoForm.get('country')?.touched">
                 <small class="text-danger">Country is required.</small>
             </div>
         </div>
         <div class="right">
             <label>LandMark</label><br>
-            <input type="text" formControlName="landmark" placeholder="Enter the LandMark">
+            <input type="text" formControlName="landmark" placeholder="Enter the LandMark" class="form-control custom-input">
             <div *ngIf="basicInfoForm.get('landmark')?.invalid && basicInfoForm.get('landmark')?.touched">
                 <small class="text-danger">LandMark is required.</small>
             </div>
@@ -159,30 +166,33 @@
     <div class="row-align">
         <div class="left">
             <label>Do you have Passport?</label><br>
-            <input type="radio" formControlName="hasPassport" value="Yes"> Yes
-            <input type="radio" formControlName="hasPassport" value="No"> No
+            <input type="radio" formControlName="hasPassport" value="Yes" class="form-check-input"> Yes
+            <input type="radio" formControlName="hasPassport" value="No" class="form-check-input"> No
             <div *ngIf="basicInfoForm.get('hasPassport')?.invalid && basicInfoForm.get('hasPassport')?.touched">
                 <small class="text-danger">Please select an option.</small>
             </div>
         </div>
         <div class="right">
             <label>Do you have Visa?</label><br>
-            <input type="radio" formControlName="hasVisa" value="Yes"> Yes
-            <input type="radio" formControlName="hasVisa" value="No"> No
+            <input type="radio" formControlName="hasVisa" value="Yes" class="form-check-input"> Yes
+            <input type="radio" formControlName="hasVisa" value="No" class="form-check-input"> No
             <div *ngIf="basicInfoForm.get('hasVisa')?.invalid && basicInfoForm.get('hasVisa')?.touched">
                 <small class="text-danger">Please select an option.</small>
             </div>
         </div>
     </div>
-    <h2>FAMILY DETAILS</h2>
+    <div class="icon">
+        <i class="fas fa-user-group mt-1 p-2"></i>
+        <h2>FAMILY DETAILS</h2>
+    </div>
     <div>
         <label>Marital Status</label><br>
-        <input type="radio" formControlName="maritalStatus" value="Single"> Single
-        <input type="radio" formControlName="maritalStatus" value="Married"> Married
-        <input type="radio" formControlName="maritalStatus" value="Divorced"> Divorced
-        <input type="radio" formControlName="maritalStatus" value="Widowed"> Widowed
-        <input type="radio" formControlName="maritalStatus" value="Separated"> Separated
-        <input type="radio" formControlName="maritalStatus" value="Other"> Other
+        <input type="radio" formControlName="maritalStatus" value="Single" class="form-check-input"> Single
+        <input type="radio" formControlName="maritalStatus" value="Married" class="form-check-input"> Married
+        <input type="radio" formControlName="maritalStatus" value="Divorced" class="form-check-input"> Divorced
+        <input type="radio" formControlName="maritalStatus" value="Widowed" class="form-check-input"> Widowed
+        <input type="radio" formControlName="maritalStatus" value="Separated" class="form-check-input"> Separated
+        <input type="radio" formControlName="maritalStatus" value="Other" class="form-check-input"> Other
         <div *ngIf="basicInfoForm.get('maritalStatus')?.invalid && basicInfoForm.get('maritalStatus')?.touched">
             <small class="text-danger">Please select marital status.</small>
         </div>
@@ -199,10 +209,10 @@
             </tr>
             <tr>
                 <td>
-                    <input type="text" formControlName="name" placeholder="Enter name">
+                    <input type="text" formControlName="name" placeholder="Enter name" class="form-control custom-input">
                 </td>
                 <td>
-                    <select formControlName="relationship">
+                    <select formControlName="relationship" class="form-control custom-input">
                         <option value="">Select</option>
                         <option value="Father">Father</option>
                         <option value="Mother">Mother</option>
@@ -212,17 +222,17 @@
                     </select>
                 </td>
                 <td>
-                    <input type="number" formControlName="age" placeholder="Enter age">
+                    <input type="number" formControlName="age" placeholder="Enter age" class="form-control custom-input">
                 </td>
                 <td>
-                    <input type="text" formControlName="occupation" placeholder="Enter occupation/organization">
+                    <input type="text" formControlName="occupation" placeholder="Enter occupation/organization" class="form-control custom-input">
                 </td>
                 <td>
-                    <button>Delete</button>
+                    <button class="btn">Delete</button>
                 </td>
             </tr>
         </table>
-        <button (click)="addFamilyMember()">Add Family Member</button>
+        <button (click)="addFamilyMember()" class="btn">Add Family Member</button>
     </div>
     <div>
         <label>Language Proficiency</label>
@@ -236,7 +246,7 @@
             </tr>
             <tr>
                 <td>
-                    <select formControlName="language">
+                    <select formControlName="language" class="form-control custom-input" placeholder="Select Language">
                         <option value="">Select</option>
                         <option value="Tamil">Tamil</option>
                         <option value="English">English</option>
@@ -253,13 +263,13 @@
                     <input type="checkbox" formControlName="canWrite">
                 </td>
                 <td>
-                    <button>Delete</button>
+                    <button class="btn">Delete</button>
                 </td>
             </tr>
         </table>
-        <button (click)="addLanguage()">Add Language</button>
+        <button (click)="addLanguage()" class="btn">Add Language</button>
     </div>
-    <button type="submit" [disabled]="basicInfoForm.invalid">Submit</button>
+    <button type="submit" [disabled]="basicInfoForm.invalid" class="btn">Submit</button>
 </form>
 
 </div>
