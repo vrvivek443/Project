@@ -11,3 +11,7 @@
 .row-align .right {
     grid-column: 2; /* Right element occupies second column */
 }
+.background-color{
+    background-color: white;
+    padding-left:5px
+}

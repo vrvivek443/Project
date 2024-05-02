@@ -1,38 +1,46 @@
-<h2>SKILL SET</h2>
-<button (click)="addSkill()">Add new</button>
-<div *ngIf="isTrue">
-    <div class="row-align">
+<div class="background-color">
+    <h2>SKILL SET</h2>
+    <button (click)="addSkill()">Add new</button>
+    <div *ngIf="isTrue">
+      <div class="row-align">
         <div>
-            <label>Skill</label>
-            <input type="text" [(ngModel)]="skill">
+          <label>Skill</label>
+          <input type="text" formControlName="skill" [(ngModel)]="skill">
+          <div *ngIf="skillForm.get('skill').invalid && skillForm.get('skill').touched">
+            <small class="text-danger">Skill is required.</small>
+          </div>
         </div>
         <div>
-            <label>Experience</label>
-            <input type="number" [(ngModel)]="experience">
+          <label>Experience</label>
+          <input type="number" formControlName="experience" [(ngModel)]="experience">
+          <div *ngIf="skillForm.get('experience').invalid && skillForm.get('experience').touched">
+            <small class="text-danger">Experience is required.</small>
+          </div>
         </div>
         <div>
-            <button (click)="addData()">Add</button>
+          <button (click)="addData()">Add</button>
         </div>
+      </div>
     </div>
-</div>
-<table>
-    <tr>
+    <table>
+      <tr>
         <th>Skills</th>
         <th>YearsOfExperience</th>
         <th>Rating</th>
         <th>Action</th>
-    </tr>
-    <tr *ngFor="let skill of skills">
-        <td>{{skill}}</td>
+      </tr>
+      <tr *ngFor="let skill of skills">
+        <td>{{ skill }}</td>
         <td></td>
         <td>
-            <select>
-                <option *ngFor="let data of rating" value="data">{{data}}</option>
-            </select>
+          <select>
+            <option *ngFor="let data of rating" [value]="data">{{ data }}</option>
+          </select>
         </td>
         <td>
-            <button>Edit</button>
-            <button>Delete</button>
+          <button>Edit</button>
+          <button>Delete</button>
         </td>
-    </tr>
-</table>
+      </tr>
+    </table>
+</div>

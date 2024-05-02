@@ -11,11 +11,17 @@ export class SkillsetComponent {
   skills:any[]=["Java","Hibernate","AWS","Springboot","Angular","Scala","XML","Windows","Ubuntu","Subversion","Mean","JavaScript"]
  rating:any[]=["Select","1 ", "2","3","4","5"]
  isTrue=false
+  skillForm: any;
  addSkill(){
   this.isTrue=!this.isTrue
  }
  addData(){
-  this.skills.push(this.skill);
-  console.log(this.skills,"hfbverbf")
+  if (this.skillForm.valid) {
+    this.skills.push({ skill: this.skill, experience: this.experience, rating: '' });
+    this.skillForm.reset();
+    this.isTrue = false;
+  } else {
+    this.skillForm.markAllAsTouched();
+  }
  }
 }

@@ -1,5 +1,41 @@
 .menu{
     display:flex;
-    justify-content: space-around;
+    align-items: flex-start;
     list-style-type: none;
 }
+.navigation{
+    background-color: rgba(255, 255, 255);
+    height:40px;
+    border-bottom:solid black 1px;
+
+}
+
+.navigation .menu li a {
+    text-decoration: none; 
+    color: inherit; 
+  }
+  .list{
+    padding:10px;
+  }
+  .list:hover{
+    border-top:2px solid rgb(0, 170, 255);
+    background-color: rgb(244, 248, 248);
+  }
+  #navigate{
+    background-color: rgb(22, 142, 198);
+    color: white;
+  }
+  .bgcolor{
+    background-color: rgb(224, 238, 249);
+  }
+  .space{
+    padding-left: 35px;
+  }
+  .component{
+    padding-left: 35px;
+    width:96%
+  }
+  .scroll{
+    position:sticky;
+  }
+  

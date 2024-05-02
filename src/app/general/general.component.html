@@ -1,4 +1,6 @@
-<h2>BASIC INFORMATION</h2>
+<div class="background-color">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <h2>BASIC INFORMATION</h2>
 <form [formGroup]="basicInfoForm" (ngSubmit)="onSubmit()">
     <div class="row-align">
         <div class="left">
@@ -259,3 +261,5 @@
     </div>
     <button type="submit" [disabled]="basicInfoForm.invalid">Submit</button>
 </form>
+
+</div>

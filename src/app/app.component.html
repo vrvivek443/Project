@@ -1,9 +1,27 @@
-<h2>UPDATE PROFILE</h2>
-<ul id="" class="menu">
+<div class="d-flex justify-content-between p-3" id="navigate">
+    <h1>CAREERS</h1>
+    <p>Arul Subramani</p>
+</div>
 
-        <li><a routerLinkActive="active" routerLink="/general">General</a></li>        
-        <li><a routerLinkActive="active" routerLink="/education">Education</a></li>
-        <li><a routerLinkActive="active" routerLink="/skillset">Skillset</a></li>
-        <li><a routerLinkActive="active" routerLink="/professional">Professional</a></li>
-    </ul>
-<router-outlet></router-outlet>
+<div class="space">
+    <div class="bgcolor">
+        <div class="scroll">
+        <h2 class="space">UPDATE PROFILE</h2>
+        <div class="component">
+            <div class="navigation">
+                <ul id="" class="menu">
+    
+                    <li class="list"><a routerLinkActive="active" routerLink="/general">General</a></li>        
+                    <li class="list"><a routerLinkActive="active" routerLink="/education">Education</a></li>
+                    <li class="list"><a routerLinkActive="active" routerLink="/skillset">Skillset</a></li>
+                    <li class="list"><a routerLinkActive="active" routerLink="/professional">Professional</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <div class="component">
+            <router-outlet></router-outlet>
+        </div>
+        </div>
+
+</div>
