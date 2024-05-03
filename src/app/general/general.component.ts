@@ -66,6 +66,7 @@ export class GeneralComponent {
 
   addFamilyMember(): void {
     this.familyMembers.push(this.createFamilyMember());
+    console.log(this.familyMembers,"family member")
   }
 
   removeFamilyMember(index: number): void {

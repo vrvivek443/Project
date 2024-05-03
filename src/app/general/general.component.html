@@ -30,7 +30,7 @@
         </div>
         <div class="right">
             <label>Gender:</label><br>
-            <input type="radio" formControlName="gender" value="Male" class="form-check-input"> <label>Male</label>
+            <input type="radio" formControlName="gender" value="Male" class="form-check-input"> <label class=" mt-2 p-1">Male</label>
             <input type="radio" formControlName="gender" value="Female" class="form-check-input"> <label>Female</label>
             <input type="radio" formControlName="gender" value="Others" class="form-check-input"> <label>Others</label>
             <div *ngIf="basicInfoForm.get('gender')?.invalid && basicInfoForm.get('gender')?.touched">
@@ -166,16 +166,16 @@
     <div class="row-align">
         <div class="left">
             <label>Do you have Passport?</label><br>
-            <input type="radio" formControlName="hasPassport" value="Yes" class="form-check-input"> Yes
-            <input type="radio" formControlName="hasPassport" value="No" class="form-check-input"> No
+            <input type="radio" formControlName="hasPassport" value="Yes" class="form-check-input"><label class=" mt-2 p-1">Yes</label> 
+            <input type="radio" formControlName="hasPassport" value="No" class="form-check-input"> <label class=" mt-2 p-1">No</label>
             <div *ngIf="basicInfoForm.get('hasPassport')?.invalid && basicInfoForm.get('hasPassport')?.touched">
                 <small class="text-danger">Please select an option.</small>
             </div>
         </div>
         <div class="right">
             <label>Do you have Visa?</label><br>
-            <input type="radio" formControlName="hasVisa" value="Yes" class="form-check-input"> Yes
-            <input type="radio" formControlName="hasVisa" value="No" class="form-check-input"> No
+            <input type="radio" formControlName="hasVisa" value="Yes" class="form-check-input"> <label class=" mt-2 p-1">Yes</label>
+            <input type="radio" formControlName="hasVisa" value="No" class="form-check-input"> <label class=" mt-2 p-1">No</label>
             <div *ngIf="basicInfoForm.get('hasVisa')?.invalid && basicInfoForm.get('hasVisa')?.touched">
                 <small class="text-danger">Please select an option.</small>
             </div>
@@ -187,19 +187,21 @@
     </div>
     <div>
         <label>Marital Status</label><br>
-        <input type="radio" formControlName="maritalStatus" value="Single" class="form-check-input"> Single
-        <input type="radio" formControlName="maritalStatus" value="Married" class="form-check-input"> Married
-        <input type="radio" formControlName="maritalStatus" value="Divorced" class="form-check-input"> Divorced
-        <input type="radio" formControlName="maritalStatus" value="Widowed" class="form-check-input"> Widowed
-        <input type="radio" formControlName="maritalStatus" value="Separated" class="form-check-input"> Separated
-        <input type="radio" formControlName="maritalStatus" value="Other" class="form-check-input"> Other
+        <input type="radio" formControlName="maritalStatus" value="Single" class="form-check-input"> <label class=" mt-2 p-1">Single</label>
+        <input type="radio" formControlName="maritalStatus" value="Married" class="form-check-input"> <label class=" mt-2 p-1">Married</label>
+        <input type="radio" formControlName="maritalStatus" value="Divorced" class="form-check-input"> <label class=" mt-2 p-1">Divorced</label>
+        <input type="radio" formControlName="maritalStatus" value="Widowed" class="form-check-input"> <label class=" mt-2 p-1">Widowed</label>
+        <input type="radio" formControlName="maritalStatus" value="Separated" class="form-check-input"> <label class=" mt-2 p-1">Separated</label>
+        <input type="radio" formControlName="maritalStatus" value="Other" class="form-check-input"> <label class=" mt-2 p-1">Other</label>
         <div *ngIf="basicInfoForm.get('maritalStatus')?.invalid && basicInfoForm.get('maritalStatus')?.touched">
             <small class="text-danger">Please select marital status.</small>
         </div>
     </div>
     <div>
         <label>Family Members</label>
-        <table>
+        <table class="table-width">
+            <thead class="thead-dark">
+
             <tr>
                 <th>Name</th>
                 <th>Relationship</th>
@@ -207,6 +209,8 @@
                 <th>Occupation/Organization</th>
                 <th>Action</th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>
                     <input type="text" formControlName="name" placeholder="Enter name" class="form-control custom-input">
@@ -231,12 +235,13 @@
                     <button class="btn">Delete</button>
                 </td>
             </tr>
+        </tbody>
         </table>
         <button (click)="addFamilyMember()" class="btn">Add Family Member</button>
     </div>
     <div>
         <label>Language Proficiency</label>
-        <table>
+        <table class="table-width">
             <tr>
                 <th>Language</th>
                 <th>Can speak</th>

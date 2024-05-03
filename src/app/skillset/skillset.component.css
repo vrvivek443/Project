@@ -22,7 +22,6 @@
 }
 .btn{
     height:30px;
-    width:50px;
     color:white;
     background-color: rgb(111, 207, 255);
     border-radius: 2px;
@@ -38,11 +37,20 @@ th{
     text-align: center;
 }
 td{
-    align-items: center;
+    text-align: center;
     width:max-content
 }
 .icon{
     display: flex;
     justify-content: flex-start;
     padding:2px;
+}
+#btn1{
+    
+    height:30px;
+    color:white;
+    background-color: rgb(175, 59, 59);
+    border-radius: 2px;
+    margin:10px
+
 }

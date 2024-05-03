@@ -27,32 +27,38 @@
         </div>
       </div>
     </div>
-    <table>
-      <tr>
-        <th>Skills</th>
-        <th>YearsOfExperience</th>
-        <th>Rating</th>
-        <th>Action</th>
-      </tr>
-      <tr *ngFor="let skill of skills; let i = index">
-        <td *ngIf="!editMode || editIndex !== i">{{ skill.skill }}</td>
-        <td><input type="text" [(ngModel)]="editSkillData.skill" *ngIf="editMode && editIndex === i" class="form-control custom-input">
-    </td>
-        <td *ngIf="!editMode || editIndex !== i">{{ skill.experience }}</td>
-        <td>
-            <input type="number" [(ngModel)]="editSkillData.experience" *ngIf="editMode && editIndex === i" class="form-control custom-input">
-          </td>
-        <td>
-          <select [(ngModel)]="editSkillData.rating" class="form-control custom-input">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Skills</th>
+            <th>Years of Experience</th>
+            <th>Rating</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let skill of skills; let i = index">
+            <td *ngIf="!editMode || editIndex !== i">{{ skill.skill }}</td>
+            <td *ngIf="editMode && editIndex === i">
+              <input type="text" [(ngModel)]="editSkillData.skill"  class="form-control custom-input">
+            </td>
+            <td *ngIf="!editMode || editIndex !== i">{{ skill.experience }}</td>
+            <td *ngIf="editMode && editIndex === i">
+              <input type="number" [(ngModel)]="editSkillData.experience"  class="form-control custom-input">
+            </td>
+            <td>
+              <select [(ngModel)]="editSkillData.rating" class="form-control custom-input">
                 <option *ngFor="let data of rating" [value]="data">{{ data }}</option>
-          </select>
-        </td>
-        <td>
-            <button (click)="editSkill(i)" *ngIf="!editMode || editIndex !== i" class="btn">Edit</button>
-            <button (click)="saveSkill(i)" *ngIf="editMode && editIndex === i" class="btn">Save</button>
-            <button (click)="deleteSkill(i)" class="btn">Delete</button>
-        </td>
-      </tr>
-    </table>
+              </select>
+            </td>
+            <td>
+              <button (click)="editSkill(i)" *ngIf="!editMode || editIndex !== i" class="btn btn-primary">Edit</button>
+              <button (click)="saveSkill(i)" *ngIf="editMode && editIndex === i" class="btn btn-success">Save</button>
+              <button (click)="deleteSkill(i)"  id="btn1">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
   </div>
   

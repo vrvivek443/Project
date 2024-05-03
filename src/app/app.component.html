@@ -1,27 +1,37 @@
-<div class="d-flex justify-content-between p-3" id="navigate">
-    <h1>CAREERS</h1>
-    <p>Arul Subramani</p>
-</div>
-
-<div class="space">
-    <div class="bgcolor">
-        <div class="scroll">
-        <h2 class="space">UPDATE PROFILE</h2>
-        <div class="component">
-            <div class="navigation">
-                <ul id="" class="menu">
+<div class="fixed-top">
+    <div class="d-flex justify-content-between p-3" id="navigate">
+        <h1>CAREERS</h1>
+        <p>Arul Subramani</p>
+    </div>
     
-                    <li class="list"><a routerLinkActive="active" routerLink="/general">General</a></li>        
-                    <li class="list"><a routerLinkActive="active" routerLink="/education">Education</a></li>
-                    <li class="list"><a routerLinkActive="active" routerLink="/skillset">Skillset</a></li>
-                    <li class="list"><a routerLinkActive="active" routerLink="/professional">Professional</a></li>
-                </ul>
+    <div class="space">
+        <div class="bgcolor">
+            <div class="scroll">
+                <h2 class="space">UPDATE PROFILE</h2>
+            <div class="component">
+                <div class="navigation">
+                        <ul id="" class="menu">
+        
+                            <li class="list"><a routerLinkActive="active" routerLink="/general">General</a></li>
+                            <li class="list"><a routerLinkActive="active" routerLink="/education">Education</a></li>
+                            <li class="list"><a routerLinkActive="active" routerLink="/skillset">Skillset</a></li>
+                            <li class="list"><a routerLinkActive="active" routerLink="/professional">Professional</a></li>
+                        </ul>
+                </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-        <div class="component">
-            <router-outlet></router-outlet>
+<div class="content">
+    <div class="space">
+        <div class="bgcolor">
+            <div class="scroll">
+                <div class="component">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
         </div>
-        </div>
-
+    </div>
 </div>
+

@@ -7,7 +7,7 @@
     background-color: rgba(255, 255, 255);
     height:40px;
     border-bottom:solid black 1px;
-
+   
 }
 
 .navigation .menu li a {
@@ -24,9 +24,11 @@
   #navigate{
     background-color: rgb(22, 142, 198);
     color: white;
+    
   }
   .bgcolor{
     background-color: rgb(224, 238, 249);
+    padding-bottom: 40px;
   }
   .space{
     padding-left: 35px;
@@ -38,4 +40,13 @@
   .scroll{
     position:sticky;
   }
+  .fixed-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1000; 
+}
+.content{
+  margin-top: 30px;
+  padding-top: 12%
+}
   
